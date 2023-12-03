@@ -1,0 +1,7 @@
+<div class="map-container" *ngIf="decodedMessage$ | async as markers">
+  <app-locator-map [markers]="markers"></app-locator-map>
+</div>
+
+<div class="location-list-container" *ngIf="locationList$ | async as locationList">
+  <app-location-list [locationList]="locationList"></app-location-list>
+</div>

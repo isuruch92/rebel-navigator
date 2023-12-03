@@ -1,0 +1,32 @@
+<mat-card *ngIf="location" class="entity-card">
+  <mat-card-header class="card-header">
+    <mat-card-title class="card-title">{{location.name}}</mat-card-title>
+    <mat-card-subtitle class="card-subtitle">{{location.species | titlecase}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="location.image" alt="image-{{location.id}}">
+  <mat-card-content class="card-content">
+    <div class="text-row">
+      <span class="text-key">Height:</span>
+      <span class="text-val">{{location.height}}</span>
+    </div>
+    <div class="text-row">
+      <span class="text-key">Distance:</span>
+      <span class="text-val" [roundDistance]="location.distance"></span>
+    </div>
+    <div class="text-row" *ngIf="location.homeworld">
+      <span class="text-key">Home World:</span>
+      <span class="text-val">{{location.homeworld | sentenceCase}}</span>
+    </div>
+
+    <div class="text-row" *ngIf="location?.affiliations?.length! > 0">
+      <span class="text-key">Affiliations:</span>
+      <span class="text-val">
+        {{ location.affiliations!.slice(0, 3).join(', ') }}
+      </span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="card-actions">
+    <button mat-button (click)="handleMoreClick()">More</button>
+    <button mat-button (click)="handleMarkOnMap()">Mark on Map</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,42 @@
+.navbar-container {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2);
+
+  img {
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+  }
+
+  .navbar-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 8px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: sans-serif;
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+      letter-spacing: 0;
+      font-weight: 400;
+    }
+
+    @media (max-width: 300px) {
+      display: none;
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .dark-mode-icon {
+    margin: 4px 4px 0 4px;
+  }
+}

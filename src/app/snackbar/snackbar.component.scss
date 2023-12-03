@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}
+
+.message-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .icon {
+    display: contents;
+  }
+
+  .message {
+    font-weight: 400;
+    margin-bottom: 4px;
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.spacer {
+  display: block;
+  width: 16px;
+}

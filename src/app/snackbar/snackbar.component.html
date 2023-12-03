@@ -1,0 +1,12 @@
+<span class="message-container" matSnackBarLabel>
+  <mat-icon class="icon">{{iconMap[data.type]}}</mat-icon>
+  <span class="message">{{data.message}}</span>
+</span>
+<span class="spacer"></span>
+<span matSnackBarActions>
+<!--  <button mat-button matSnackBarAction>Action</button>-->
+  <button *ngIf="data.actionText" mat-flat-button color="primary" (click)="snackBarRef.dismissWithAction()">{{data.actionText}}</button>
+  <button (click)="snackBarRef.dismiss()" mat-icon-button aria-label="close button">
+        <mat-icon>close</mat-icon>
+  </button>
+</span>

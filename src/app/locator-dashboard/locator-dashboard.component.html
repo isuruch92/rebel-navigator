@@ -1,7 +1,23 @@
-<div class="map-container" *ngIf="decodedMessage$ | async as markers">
-  <app-locator-map [markers]="markers"></app-locator-map>
-</div>
+<ng-container *ngIf="decodedMessage$ | async as markers">
+  <div class="map-container">
+    <app-locator-map [markers]="markers"></app-locator-map>
+  </div>
 
-<div class="location-list-container" *ngIf="locationList$ | async as locationList">
-  <app-location-list [locationList]="locationList"></app-location-list>
-</div>
+  <div
+    class="location-list-container"
+    *ngIf="locationList$ | async as locationList"
+  >
+    <ng-container *ngIf="locationList.length > 0; else noData">
+      <app-location-list [locationList]="locationList"></app-location-list>
+    </ng-container>
+  </div>
+
+  <ng-template #noData>
+    <div class="no-data-view">
+      <div class="no-data-title">Begin your journey!</div>
+      <div class="no-data-subtitle">
+        Mark your location by clicking on the map
+      </div>
+    </div>
+  </ng-template>
+</ng-container>

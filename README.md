@@ -1,5 +1,25 @@
 # RebelNavigator
 
+## Project Overview and Approach
+
+### Architectural Decisions
+
+[x] I chose Angular as the framework because it's where I have the most strength.
+[x] I tried to add as more details as possible for entities to render 
+[x] I have utilized Angular Materials for the theming and components because it is really easy and familiar to use and customize
+[x] I tried to make the UI look nice as possible and also carefully considered about the responsiveness in different screens
+[x] For State Management, I have choosed RxJS observables and subjects because this is not that of a complicated project with a lot of modules and a lot of state to manage, so going for redux or something third party would be an overkill
+[x] For rendering the map, I have considered different libraries, OpenLayers, Leaflet and Angular Google Maps, and had experimented with each of them to identify what is easier to integrate. Finally I went with the OpenLayers because its feature-rich and has a lot of examples and also its not that hard to integrate to Angular once you get the hang of it.
+[x] I have used Angular Standalone components feature for this application so that the unnecessary NgModules complexity is removed. Its really each to work with Standalone components.
+[x] I focused more on separation of concerns so that I structured the components and services with their own responsibility for more readability, scalability and maintainability.
+[x] I tried to follow reactive programming pattern as much as possible to better use of RxJS library and for better performance of the app.
+[x] When fetching entities, rather than making a separate network call for each entity, I decided to fetch them all and filter and process them using RxJS operators, so that I need to make just 1 network call to get the entities. (I believe this approach is better suited for this project because there are not a lot of entities in the API)
+[x] I added a simple error handling mechanism with toast messages to the user (this definitely can be improved more)
+[x] While I considered incorporating routing, given the nature of this project as a simple dashboard, routing to different components seemed unnecessary. Instead, I opted for a modal to provide additional details. Nonetheless, I included routing specifically within the Main Dashboard component for a more seamless user experience.
+[x] I also tried to cover as much as the unit tests as possible. 
+[x] All in all, I tried to balance every aspect of the project as much as I can and surely had a lot of fun and learning doing it. Kudos to whoever made this great assignment.
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
 ## Development server

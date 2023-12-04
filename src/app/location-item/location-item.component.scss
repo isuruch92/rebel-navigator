@@ -5,6 +5,16 @@
   .card-header {
     padding: 16px 0;
 
+    .card-avatar {
+      button {
+        font-size: 20px;
+        font-family: sans-serif;
+        cursor: default;
+        pointer-events: none;
+        background: #8e24aa;
+      }
+    }
+
     .card-title {
       font-weight: 600;
       font-size: 18px;

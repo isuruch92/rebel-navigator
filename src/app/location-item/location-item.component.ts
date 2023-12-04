@@ -19,6 +19,7 @@ import {LocationDetailComponent} from "../location-detail/location-detail.compon
 })
 export class LocationItemComponent {
   @Input() location!: LocationListItem;
+  @Input() id!: number;
 
   constructor(private stateService: StateService,
               private dialogService: DialogService) {

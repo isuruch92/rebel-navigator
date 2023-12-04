@@ -1,5 +1,10 @@
 <mat-card *ngIf="location" class="entity-card">
   <mat-card-header class="card-header">
+    <div mat-card-avatar class="card-avatar">
+      <button mat-mini-fab color="primary" aria-label="fab">
+        {{id}}
+      </button>
+    </div>
     <mat-card-title class="card-title">{{location.name}}</mat-card-title>
     <mat-card-subtitle class="card-subtitle">{{location.species | titlecase}}</mat-card-subtitle>
   </mat-card-header>

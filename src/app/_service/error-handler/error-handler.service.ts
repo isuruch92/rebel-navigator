@@ -4,7 +4,7 @@ import { SnackbarComponent } from "../../snackbar/snackbar.component";
 import { HttpErrorResponse } from "@angular/common/http";
 import { SnackBarData, SnackBarType } from "../../_model/snackbar.model";
 
-const panelClassMap: Record<SnackBarType, string> = {
+export const panelClassMap: Record<SnackBarType, string> = {
   [SnackBarType.SUCCESS]: "success-snackbar",
   [SnackBarType.ERROR]: "error-snackbar",
   [SnackBarType.WARNING]: "warning-snackbar",

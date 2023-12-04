@@ -1,25 +1,26 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import {LocatorDashboardComponent} from './locator-dashboard.component';
-import {StateService} from "../_service/state/state.service";
-import {EntityService} from "../_service/entity/entity.service";
-import {MessageDecoderService} from "../_service/message-decoder/message-decoder.service";
-import {of} from "rxjs";
-import {MatDialog} from "@angular/material/dialog";
+import { LocatorDashboardComponent } from "./locator-dashboard.component";
+import { StateService } from "../_service/state/state.service";
+import { EntityService } from "../_service/entity/entity.service";
+import { MessageDecoderService } from "../_service/message-decoder/message-decoder.service";
+import { of } from "rxjs";
+import { MatDialog } from "@angular/material/dialog";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 const mockStateService = {
-  sortedMarkers$: of([{id: 1, lat: 100, long: 200}]),
+  sortedMarkers$: of([{ id: 1, lat: 100, long: 200 }]),
 };
 
 const mockEntityService = {
-  entities$: of([{id: 1, name: 'Entity 1'}]),
+  entities$: of([{ id: 1, name: "Entity 1" }]),
 };
 
 const mockMessageDecoderService = {
-  decodedMessage$: of([{id: 1, lat: 100, long: 200}]),
+  decodedMessage$: of([{ id: 1, lat: 100, long: 200 }]),
 };
 
-describe('LocatorDashboardComponent', () => {
+describe("LocatorDashboardComponent", () => {
   let component: LocatorDashboardComponent;
   let fixture: ComponentFixture<LocatorDashboardComponent>;
 
@@ -27,10 +28,11 @@ describe('LocatorDashboardComponent', () => {
     await TestBed.configureTestingModule({
       imports: [LocatorDashboardComponent],
       providers: [
-        {provide: StateService, useValue: mockStateService},
-        {provide: EntityService, useValue: mockEntityService},
-        {provide: MessageDecoderService, useValue: mockMessageDecoderService},
-        {provide: MatDialog, useValue: MatDialog},
+        { provide: StateService, useValue: mockStateService },
+        { provide: EntityService, useValue: mockEntityService },
+        { provide: MessageDecoderService, useValue: mockMessageDecoderService },
+        { provide: MatDialog, useValue: MatDialog },
+        { provide: MatSnackBar, useValue: MatSnackBar },
       ],
     }).compileComponents();
   });
@@ -41,11 +43,11 @@ describe('LocatorDashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have decodedMessage$ and locationList$', () => {
+  it("should have decodedMessage$ and locationList$", () => {
     expect(component.decodedMessage$).toBeDefined();
     expect(component.locationList$).toBeDefined();
   });

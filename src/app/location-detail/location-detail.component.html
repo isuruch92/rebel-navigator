@@ -1,46 +1,45 @@
 <ng-container *ngIf="location">
   <div class="title-container">
-    <h1 class="title" mat-dialog-title>{{location.name}}</h1>
+    <h1 class="title" mat-dialog-title>{{ location.name }}</h1>
     <ng-container *ngIf="location.wiki">
       <a class="wiki" [href]="location.wiki" target="_blank">Wiki</a>
     </ng-container>
   </div>
   <mat-dialog-content class="mat-typography">
-
     <div class="content-body">
-      <img class="image" [src]="location.image">
+      <img class="image" [src]="location.image" />
 
       <div class="content">
-        <h3>Distance to the User:</h3>
-        <p [roundDistance]="location.distance"></p>
-
-        <h3>Height:</h3>
-        <p>{{location.height}}</p>
-
-        <ng-container *ngIf="location.homeworld">
-          <h3>Home World:</h3>
-          <p>{{location.homeworld | sentenceCase}}</p>
-        </ng-container>
-
-        <ng-container *ngIf="location.mass">
-          <h3>Mass:</h3>
-          <p>{{location.mass}}</p>
-        </ng-container>
-
-        <ng-container *ngIf="location.gender">
-          <h3>Gender:</h3>
-          <p>{{location.gender}}</p>
-        </ng-container>
-
-        <ng-container *ngIf="location.bornLocation">
-          <h3>Born Location:</h3>
-          <p>{{location.bornLocation | sentenceCase}}</p>
-        </ng-container>
-
-        <ng-container *ngIf="location.diedLocation">
-          <h3>Died Location:</h3>
-          <p>{{location.diedLocation | sentenceCase}}</p>
-        </ng-container>
+        <div class="short-content">
+          <div class="short-content-element">
+            <h3>{{ isMobile ? "Distance:" : "Distance to the User:" }}</h3>
+            <p [roundDistance]="location.distance"></p>
+          </div>
+          <div class="short-content-element">
+            <h3>Height:</h3>
+            <p>{{ location.height }}</p>
+          </div>
+          <div class="short-content-element" *ngIf="location.homeworld">
+            <h3>Home World:</h3>
+            <p>{{ location.homeworld | sentenceCase }}</p>
+          </div>
+          <div class="short-content-element" *ngIf="location.mass">
+            <h3>Mass:</h3>
+            <p>{{ location.mass }}</p>
+          </div>
+          <div class="short-content-element" *ngIf="location.gender">
+            <h3>Gender:</h3>
+            <p>{{ location.gender }}</p>
+          </div>
+          <div class="short-content-element" *ngIf="location.bornLocation">
+            <h3>Born Location:</h3>
+            <p>{{ location.bornLocation | sentenceCase }}</p>
+          </div>
+          <div class="short-content-element" *ngIf="location.diedLocation">
+            <h3>Died Location:</h3>
+            <p>{{ location.diedLocation | sentenceCase }}</p>
+          </div>
+        </div>
 
         <ng-container *ngIf="location?.affiliations?.length! > 0">
           <h3>Affiliations:</h3>
@@ -58,7 +57,6 @@
         </ng-container>
       </div>
     </div>
-
   </mat-dialog-content>
 </ng-container>
 

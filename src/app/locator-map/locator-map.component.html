@@ -1,4 +1,14 @@
-<div id="openlayers-map"></div>
+<div id="openlayers-map">
+  <button
+    *ngIf="markedCount > 0"
+    class="clear-button"
+    mat-raised-button
+    color="primary"
+    (click)="clearAllSelection()"
+  >
+    Clear All Selection
+  </button>
+</div>
 <div id="marker-popup"></div>
 <ng-container *ngIf="mapClick$ | async"></ng-container>
 <ng-container *ngIf="mapHover$ | async"></ng-container>

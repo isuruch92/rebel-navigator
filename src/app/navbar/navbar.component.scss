@@ -1,5 +1,5 @@
 .navbar-container {
-  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
 
   img {
     width: 32px;
@@ -27,7 +27,7 @@
       font-weight: 400;
     }
 
-    @media (max-width: 300px) {
+    @media (max-width: 350px) {
       display: none;
     }
   }

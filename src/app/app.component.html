@@ -1,8 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav-content>
     <app-navbar></app-navbar>
-    <app-locator-dashboard></app-locator-dashboard>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 <ng-container *ngIf="toggleChange$ | async"></ng-container>
-

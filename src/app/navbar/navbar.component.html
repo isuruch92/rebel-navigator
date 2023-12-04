@@ -1,9 +1,14 @@
-<mat-toolbar class="navbar-container ">
-  <img class="logo-image" [src]="logoUrl" [alt]="'logo'">
+<mat-toolbar class="navbar-container">
+  <img class="logo-image" [src]="logoUrl" [alt]="'logo'" />
   <span class="navbar-title">Rebel Navigator</span>
   <span class="spacer"></span>
   <mat-slide-toggle [formControl]="themeControl">
-    <mat-icon class="dark-mode-icon" aria-hidden="false" aria-label="dark-mode icon" fontIcon="dark_mode"></mat-icon>
+    <mat-icon
+      class="dark-mode-icon"
+      aria-hidden="false"
+      aria-label="dark-mode icon"
+      fontIcon="dark_mode"
+    ></mat-icon>
   </mat-slide-toggle>
 </mat-toolbar>
 <ng-container *ngIf="isChecked$ | async"></ng-container>

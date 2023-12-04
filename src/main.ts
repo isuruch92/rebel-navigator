@@ -14,7 +14,7 @@ import { LocatorDashboardComponent } from "./app/locator-dashboard/locator-dashb
 // this is just for showing the splash screen
 export function loadCrucialData() {
   return function () {
-    return delay(1800);
+    return delay(1500);
   };
 }
 

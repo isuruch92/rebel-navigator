@@ -17,7 +17,6 @@ import { MarkerService } from "./_service/marker.service";
 import { PopupService } from "./_service/popup.service";
 import { DistanceService } from "./_service/distance.service";
 import { StateService } from "../_service/state/state.service";
-import { LocationListItem } from "../_model/location-list-item.model";
 import { EntityService } from "../_service/entity/entity.service";
 import { EntityDetails } from "../_model/entity-details.model";
 import { SnackBarType } from "../_model/snackbar.model";
@@ -125,8 +124,10 @@ export class LocatorMapComponent implements AfterViewInit, OnDestroy {
     this.markerLayer = this.mapService.createVectorLayer();
     this.markerLayer.setSource(source);
 
-    for (let i = 0; i < features.length; i++) {
-      this.mapService.flashMarker(features[i], this.markerLayer, Color.BLUE);
+    if (features?.length > 0) {
+      features.forEach(feature => {
+        this.mapService.flashMarker(feature, this.markerLayer, Color.BLUE);
+      });
     }
 
     this.mapService.addLayer(this.markerLayer);

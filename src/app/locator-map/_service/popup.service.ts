@@ -10,7 +10,7 @@ import {EntityDetails} from "../../_model/entity-details.model";
 export class PopupService {
 
   private popup!: Overlay;
-  private availableIcons = [4, 8, 13, 15, 16, 20, 21, 22, 24, 27];
+  private availableIcons = [4, 8, 13, 15, 16, 20, 21, 22, 27];
 
   public getPopupOptions(anchorId: string): Options {
     return {

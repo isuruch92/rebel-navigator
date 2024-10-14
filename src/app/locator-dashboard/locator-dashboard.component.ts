@@ -9,16 +9,18 @@ import {LocationListItem} from "../_model/location-list-item.model";
 import {StateService} from "../_service/state/state.service";
 import {EntityDetails} from "../_model/entity-details.model";
 import {LocationListComponent} from "../location-list/location-list.component";
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-locator-dashboard',
   standalone: true,
-  imports: [CommonModule, LocatorMapComponent, LocationListComponent],
+  imports: [CommonModule, LocatorMapComponent, LocationListComponent, MatIconModule],
   templateUrl: './locator-dashboard.component.html',
   styleUrls: ['./locator-dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LocatorDashboardComponent {
+  public mapCollapsed = false;
   public decodedMessage$: Observable<Marker[]> = this.messageDecoderService.decodedMessage$;
   public locationList$: Observable<LocationListItem[]> = combineLatest([
     this.stateService.sortedMarkers$,
@@ -38,5 +40,9 @@ export class LocatorDashboardComponent {
   constructor(private messageDecoderService: MessageDecoderService,
               private entityService: EntityService,
               private stateService: StateService) {
+  }
+
+  public toggleMap() {
+    this.mapCollapsed = !this.mapCollapsed;
   }
 }

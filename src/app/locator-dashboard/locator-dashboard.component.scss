@@ -2,6 +2,35 @@
   height: 70vh;
   padding: 10px 6px 6px;
   box-shadow: inset 0 8px 12px 12px rgba(154, 154, 154, 0.2);
+  transition: height 0.3s ease;
+
+  &.collapsed {
+    height: 5vh;
+  }
+}
+
+.map-toggle {
+  display: flex;
+  margin-top: -24px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+  background-color: #cecece; 
+  border: none; 
+  outline: none;
+  border-radius: 50%; 
+  padding: 10px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, border 0.3s ease; 
+
+  &:hover {
+    background-color: #979797; 
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .no-data-view {

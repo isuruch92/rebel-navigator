@@ -1,7 +1,13 @@
 <ng-container *ngIf="decodedMessage$ | async as markers">
-  <div class="map-container">
+  <div class="map-container" [ngClass]="{'collapsed': mapCollapsed}">
     <app-locator-map [markers]="markers"></app-locator-map>
   </div>
+  <button class="map-toggle" (click)="toggleMap()">
+    <mat-icon *ngIf="mapCollapsed; else expandedIcon">keyboard_double_arrow_down</mat-icon>
+    <ng-template #expandedIcon>
+      <mat-icon>keyboard_double_arrow_up</mat-icon>
+    </ng-template>
+  </button>
 
   <div
     class="location-list-container"

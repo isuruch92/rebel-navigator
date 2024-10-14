@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { catchError, Observable, tap, throwError } from "rxjs";
+import { catchError, Observable, of, tap, throwError } from "rxjs";
 import { EntityDetails } from "../../_model/entity-details.model";
 import { ErrorHandlerService } from "../error-handler/error-handler.service";
 import { SnackBarType } from "../../_model/snackbar.model";
+import { mockEntities } from "./entity-mock";
 
 @Injectable({
   providedIn: "root",
@@ -16,8 +17,10 @@ export class EntityService {
     .pipe(
       tap(() => this.handleSuccess("Entities retrieved successfully!")),
       catchError((error) => {
-        this.handleError(error, "Failed to retrieve the entities");
-        return throwError(error);
+        // this.handleError(error, "Failed to retrieve the entities");
+        // return throwError(error);
+
+        return of(mockEntities);
       })
     );
 

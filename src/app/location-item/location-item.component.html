@@ -6,9 +6,9 @@
       <mat-card-title class="mat-card-title">{{location.name}}</mat-card-title>
       <mat-card-subtitle>{{location.species | titlecase}}</mat-card-subtitle>
       <span class="spacer"></span>
-      <mat-chip-listbox>
-        <mat-chip-option>{{id}}</mat-chip-option>
-      </mat-chip-listbox>
+      <div class="id">
+        <span>{{id}}</span>
+      </div>
     </mat-card-header>
     
     <div class="image-container">
@@ -61,12 +61,12 @@
     </mat-card-content>
 
     <mat-card-actions class="card-actions">
-      <button mat-stroked-button (click)="handleMarkOnMap()">
+      <button class="secondary" mat-stroked-button (click)="handleMoreClick()">
         <mat-icon>map</mat-icon>
-        Mark on Map        
+        Details
       </button>
-      <button mat-raised-button color="primary" mat-button (click)="handleMoreClick()">
+      <button class="primary" mat-raised-button color="primary" mat-button (click)="handleMarkOnMap()">
         <mat-icon>info</mat-icon>
-        Details</button>
+        Mark on Map  </button>
     </mat-card-actions>
   </mat-card>

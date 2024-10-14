@@ -4,6 +4,7 @@ import { catchError, Observable, of, switchMap, throwError } from "rxjs";
 import { Marker } from "../../_model/marker.model";
 import { ErrorHandlerService } from "../error-handler/error-handler.service";
 import { SnackBarType } from "../../_model/snackbar.model";
+import { mockMessage } from "./message-mock";
 
 export interface SecretMessage {
   message: string;
@@ -25,8 +26,11 @@ export class MessageDecoderService {
         return of(markers);
       }),
       catchError((error) => {
-        this.handleError(error, "Failed to retrieve the secret");
-        return throwError(error);
+        // this.handleError(error, "Failed to retrieve the secret");
+        // return throwError(error);
+        console.log(error);
+        const markers = this.decryptMessage(mockMessage.message);
+        return of(markers);
       })
     );
 

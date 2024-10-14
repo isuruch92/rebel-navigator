@@ -30,7 +30,7 @@
 
 - I also tried to cover as much as the unit tests as possible. 
 
-- All in all, I tried to balance every aspect of the project as much as I can and surely had a lot of fun and learning doing it. Kudos to whoever made this great assignment.
+- All in all, I tried to balance every aspect of the project as much as I can and surely had a lot of fun and learning doing it.
 
 ##
 

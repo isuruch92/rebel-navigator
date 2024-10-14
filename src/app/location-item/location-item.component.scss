@@ -1,66 +1,132 @@
-.entity-card {
-  height: 100%;
-  padding: 0 16px;
+:host {
+  display: block;
+}
 
-  .card-header {
-    padding: 16px 0;
+.mat-card {
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s ease-in-out;
 
-    .card-avatar {
-      button {
-        font-size: 20px;
-        font-family: sans-serif;
-        cursor: default;
-        pointer-events: none;
-        background: #8e24aa;
-      }
-    }
-
-    .card-title {
-      font-weight: 600;
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-
-    .card-subtitle {
-      font-size: 16px;
-    }
+  &:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
+}
+
+.mat-card-header {
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #116ef9;
+  background-color: #fff;
+  padding: 6px;
 
   img {
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 0 6px 12px #797878;
-    border-radius: 12px;
-    object-position: top;
   }
+}
 
-  .card-content {
+.mat-card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-card-image {
+  object-fit: cover;
+  height: 250px;
+  object-position: 50% 0%;
+  background-color: #ededed;
+}
+
+.image-container{
+  // margin: 10px;
+  // border: 3px solid #ededed;
+  // border-radius: 6px;
+  // overflow: hidden;
+}
+
+.main-info-section {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  gap: 12px;
+
+  .main-info-row {
     display: flex;
-    flex: 1;
-    padding: 16px 0;
-    flex-direction: column;
-    row-gap: 4px;
-    line-height: 24px;
+    flex-direction: row;
+    align-items: center;
 
-    .text-key {
-      font-weight: 600;
-    }
-
-    .text-val {
-      margin: 0 4px;
-    }
-  }
-
-  .card-actions {
-    padding: 8px 0;
-    justify-content: flex-end;
-
-    button {
-      font-size: 16px;
-      letter-spacing: 0.2px;
+    .main-info-item {
+      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      flex: 40%;
     }
   }
 }
 
+.show-more-btn { 
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.theme-dark {
+  background: linear-gradient(to bottom right, #1a202c, #2d3748);
+  color: white;
+
+  .mat-card-subtitle {
+    color: #a0aec0;
+  }
+}
+
+.theme-light {
+  background-color: #FFF !important;
+  color: #1a202c;
+
+  .mat-card-subtitle {
+    color: #4a5568;
+  }
+}
+
+.expanded-content {
+  .expanded-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0;
+  }
+
+  .expanded-list {
+    margin-top: 4px;
+    font-size: 14px;
+  }
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px;
+
+  button {
+    font-family: "Poppins", sans-serif;
+    flex:50%;
+  }
+}
 

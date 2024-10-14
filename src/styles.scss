@@ -44,15 +44,11 @@ $rebel-navigator-theme-dark: mat.define-dark-theme((
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Poppins", sans-serif; }
 
 
 .theme-dark {
   @include mat.all-component-colors($rebel-navigator-theme-dark);
-
-  .mat-mdc-card {
-    background-color: #424242 !important;
-  }
 }
 
 .mat-mdc-snack-bar-container {
@@ -73,10 +69,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --mat-mdc-snack-bar-button-color: #000;
     --mdc-snackbar-supporting-text-color: #000;
   }
-}
-
-.mat-mdc-card {
-  background-color: #e4e4e4 !important;
 }
 
 .custom-dialog .mat-mdc-dialog-container {
